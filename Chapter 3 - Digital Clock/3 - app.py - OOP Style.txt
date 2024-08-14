@@ -1,0 +1,26 @@
+import tkinter as tk
+import time
+import threading
+
+class ClockApp:
+    def __init__(self):
+        self.root = tk.Tk()
+        self.clock_label = tk.Label(self.root, font=('calibri', 40, 'bold'), bg='black', fg='white')
+        self.clock_label.pack(pady=50)
+
+    def update_clock(self):
+        # Use '%I' for 12-hour format
+        # current_time = time.strftime('%I:%M:%S %p')
+        current_time = time.strftime('%H:%M:%S %p')
+        self.clock_label.config(text=current_time)
+        self.root.after(1000, self.update_clock)
+
+    def start(self):
+        clock_thread = threading.Thread(target=self.update_clock)
+        clock_thread.daemon = True
+        clock_thread.start()
+        self.root.mainloop()
+
+if __name__ == '__main__':
+    clock_app = ClockApp()
+    clock_app.start()

@@ -1,0 +1,41 @@
+1. Importing the required modules:
+
+import tkinter as tk
+import time
+import threading
+
+
+This imports the tkinter, time, and threading modules, which are used for creating the graphical user interface, getting the current time, and running the clock update function in the background using threading, respectively.
+
+2. Creating the Tkinter window and the clock label:
+
+root = tk.Tk()
+clock_label = tk.Label(root, font=('calibri', 40, 'bold'), bg='black', fg='white')
+clock_label.pack(pady=50)
+
+
+This creates a Tkinter window using tk.Tk(), and a clock label using tk.Label(). The clock label is configured with a bold Calibri font, a black background, and white text color. The pack() method is used to add padding to the label and display it in the window.
+
+3. Defining the clock update function:
+
+def update_clock():
+    current_time = time.strftime('%H:%M:%S %p')
+    clock_label.config(text=current_time)
+    root.after(1000, update_clock)
+
+This function gets the current time using time.strftime() with the %H:%M:%S %p format string to display the time in 24-hour format with the AM/PM indicator. The config() method is used to set the text of the clock label to the current time string. The after() method is used to schedule the update_clock function to run again after 1000 milliseconds (1 second), using root.after() to ensure the function is called within the main loop.
+
+4. Creating a thread to run the clock update function in the background:
+
+clock_thread = threading.Thread(target=update_clock)
+clock_thread.daemon = True
+clock_thread.start()
+
+This creates a Thread object with the update_clock function as the target, sets the thread to run as a daemon thread, and starts the thread using start().
+
+5. Starting the Tkinter main loop:
+
+root.mainloop()
+
+
+This starts the Tkinter main loop, which handles the user interface events and keeps the window and clock label displayed on the screen. The update_clock function runs in the background using threading, updating the clock label every second with the current time in 24-hour format with the AM/PM indicator.
