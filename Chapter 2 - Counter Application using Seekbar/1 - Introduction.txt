@@ -1,0 +1,25 @@
+    The import tkinter as tk statement imports the Tkinter module and aliases it as tk for convenience.
+
+    The on_seekbar_change function is defined. It is called whenever the value of the seekbar changes. The function takes the new value as a parameter.
+
+    The first line inside the on_seekbar_change function converts the value to an integer using int(value). This is done because the value passed to the function is initially a string.
+
+    The next conditional statements check whether the new value is greater than or less than the previous value of the seekbar. If it's greater, the function checks if the seekbar value is less than 10 before incrementing the value by 1. If it's smaller, the function checks if the seekbar value is greater than 0 before decrementing the value by 1.
+
+    After updating the value, seekbar.set(value) is called to set the seekbar widget's value to the new value.
+
+    The label's text is updated with the new value using the label.configure(text="Value: {}".format(value)) statement.
+
+    The if __name__ == "__main__": condition checks whether the current module is the main module (the module being run directly, not imported as a module by another script).
+
+    Inside the if block, the main Tkinter window is created using root = tk.Tk(). The window's title is set to "Counter" using root.title("Counter"), and the size is set to 300x100 using root.geometry("300x100").
+
+    The variable value is initialized to 0.
+
+    The seekbar widget is created using tk.Scale(). It is configured to have a range from 0 to 10 (from_=0, to=10), and a horizontal orientation (orient=tk.HORIZONTAL). The command parameter is set to on_seekbar_change, so the on_seekbar_change function will be called whenever the seekbar value changes. The seekbar widget is then packed into the root window using seekbar.pack(padx=20, pady=10).
+
+    The label widget is created using tk.Label(). Its initial text is set to "Value: 0" using text="Value: {}".format(value). The label widget is packed into the root window using label.pack(pady=5).
+
+    Finally, the Tkinter event loop is started using root.mainloop(), which listens for events and keeps the application running until the window is closed.
+
+When the user moves the seekbar, the on_seekbar_change function is called, the value is updated, and the label is refreshed to display the new value.
