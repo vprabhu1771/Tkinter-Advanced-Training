@@ -1,0 +1,35 @@
+This code is a basic implementation of a counter using the Tkinter library in Python. Tkinter is a standard GUI (Graphical User Interface) toolkit for Python.
+
+Let's go through the code step by step:
+
+1. The first line imports the Tkinter module and assigns it the name "tk" for convenience.
+
+2. `root = tk.Tk()` creates an instance of the Tkinter `Tk` class, which represents the main window or the root window of the application.
+
+3. `root.geometry("300x200")` sets the size of the root window to 300 pixels wide and 200 pixels tall.
+
+4. `root.title("Counter")` sets the title of the root window to "Counter".
+
+5. `count = tk.IntVar()` creates an instance of the Tkinter `IntVar` class. It is a special variable that can be used to store integer values and is associated with Tkinter widgets.
+
+6. `count.set(0)` initializes the value of the `IntVar` to 0, representing the initial count of the counter.
+
+7. `value_label = tk.Label(root, textvariable=count)` creates a Tkinter `Label` widget and associates it with the `IntVar` object `count`. This label will display the current value of the counter.
+
+8. `value_label.pack()` organizes the label widget in the window.
+
+9. `increment = lambda: count.set(count.get() + 1)` defines a lambda function named `increment` that increments the value of `count` by 1 when called.
+
+10. `increment_text = tk.StringVar()` creates a Tkinter `StringVar` to hold the text for the increment button.
+
+11. `increment_text.set("+ Increment")` sets the initial text of the increment button.
+
+12. `increment_btn = tk.Button(root, textvariable=increment_text, command=increment)` creates a Tkinter `Button` widget with the specified text and associates it with the `increment` lambda function.
+
+13. `increment_btn.pack()` organizes the increment button in the window.
+
+14. Similarly, the code creates a decrement button and a reset button using `decrement` and `reset` lambda functions, respectively.
+
+15. `root.mainloop()` starts the main event loop of the Tkinter application, which handles user events and updates the GUI.
+
+When you run this code, it will open a window with a label showing the current count value and three buttons: "+ Increment," "- Decrement," and "RESET." Clicking the buttons will update the count accordingly, incrementing, decrementing, or resetting it.
