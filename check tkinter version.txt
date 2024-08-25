@@ -1,0 +1,6 @@
+import tkinter
+
+print(tkinter.TkVersion)
+
+OUTPUT
+8.6
