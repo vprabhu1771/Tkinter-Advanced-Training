@@ -1,0 +1,70 @@
+To create a simple GUI application using Tkinter that displays the computer name retrieved from the Windows Registry, you can integrate the `winreg` module with Tkinter. Here's how you can do it:
+
+```python
+import tkinter as tk
+import winreg
+
+def get_computer_name():
+    try:
+        # Open the registry key
+        registry_key = winreg.OpenKey(
+            winreg.HKEY_LOCAL_MACHINE,
+            r"SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName",
+            0,
+            winreg.KEY_READ
+        )
+        
+        # Query the 'ComputerName' value
+        computer_name, reg_type = winreg.QueryValueEx(registry_key, "ComputerName")
+        
+        # Close the registry key
+        winreg.CloseKey(registry_key)
+        
+        return computer_name
+    except WindowsError as e:
+        return f"Error: {e}"
+
+def display_computer_name():
+    # Get the computer name from the registry
+    computer_name = get_computer_name()
+    
+    # Update the label text to show the computer name
+    name_label.config(text=f"Computer Name: {computer_name}")
+
+# Create the main Tkinter window
+root = tk.Tk()
+root.title("Computer Name Finder")
+
+# Create a label to display the computer name
+name_label = tk.Label(root, text="Click the button to get the computer name", padx=20, pady=20)
+name_label.pack()
+
+# Create a button to fetch and display the computer name
+get_name_button = tk.Button(root, text="Get Computer Name", command=display_computer_name)
+get_name_button.pack(pady=10)
+
+# Run the Tkinter event loop
+root.mainloop()
+```
+
+### Explanation:
+
+1. **Import Modules:**
+   - `tkinter`: Standard Python interface to the Tk GUI toolkit.
+   - `winreg`: Provides access to the Windows Registry.
+
+2. **Function `get_computer_name()`:**
+   - This function opens the Windows Registry key where the computer name is stored, retrieves the value of `ComputerName`, and then closes the key. If an error occurs, it returns the error message.
+
+3. **Function `display_computer_name()`:**
+   - Calls `get_computer_name()` to fetch the computer name and updates the `name_label` text with the retrieved computer name.
+
+4. **Tkinter GUI Setup:**
+   - **Main Window (`root`)**: Created and titled "Computer Name Finder".
+   - **Label (`name_label`)**: Displays initial text and later updated with the computer name.
+   - **Button (`get_name_button`)**: Calls `display_computer_name()` when clicked to fetch and display the computer name.
+
+5. **Run Tkinter Event Loop (`root.mainloop()`):**
+   - Starts the Tkinter event loop to keep the window open and responsive.
+
+This script provides a user-friendly way to display the computer name using a graphical interface with Tkinter.

@@ -1,0 +1,18 @@
+To get the computer name via `regedit` (the Windows Registry Editor), you can follow these steps:
+
+1. **Open the Run Dialog:**
+   - Press `Win + R` on your keyboard to open the Run dialog box.
+
+2. **Open Registry Editor:**
+   - Type `regedit` in the Run dialog box and press `Enter`. Click "Yes" if prompted by User Account Control.
+
+3. **Navigate to the System Information Key:**
+   - In the Registry Editor, navigate to the following path:
+     ```
+     HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName
+     ```
+
+4. **Find the Computer Name:**
+   - In the `ComputerName` key, look for an entry named `ComputerName`. The value of this entry is the name of your computer.
+
+By following these steps, you can view and retrieve the computer name directly from the Windows Registry.

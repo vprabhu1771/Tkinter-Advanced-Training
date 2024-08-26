@@ -1,0 +1,51 @@
+To access the computer name from the Windows Registry using Python, you can use the `winreg` module, which provides functions to interact with the Windows Registry.
+
+Here's a Python script that retrieves the computer name:
+
+```python
+import winreg
+
+def get_computer_name():
+    try:
+        # Open the registry key
+        registry_key = winreg.OpenKey(
+            winreg.HKEY_LOCAL_MACHINE,
+            r"SYSTEM\CurrentControlSet\Control\ComputerName\ComputerName",
+            0,
+            winreg.KEY_READ
+        )
+        
+        # Query the 'ComputerName' value
+        computer_name, reg_type = winreg.QueryValueEx(registry_key, "ComputerName")
+        
+        # Close the registry key
+        winreg.CloseKey(registry_key)
+        
+        return computer_name
+    except WindowsError as e:
+        print(f"An error occurred: {e}")
+        return None
+
+# Get and print the computer name
+computer_name = get_computer_name()
+if computer_name:
+    print(f"Computer Name: {computer_name}")
+else:
+    print("Failed to retrieve the computer name.")
+```
+
+### How This Script Works:
+
+1. **Import `winreg`:** This module is used to access the Windows Registry.
+
+2. **Open the Registry Key:** The `winreg.OpenKey` function opens the specified registry key for reading. The path specified points to the location where the computer name is stored.
+
+3. **Query the `ComputerName` Value:** The `winreg.QueryValueEx` function retrieves the value associated with the `ComputerName` entry.
+
+4. **Close the Registry Key:** Always close the registry key after accessing it using `winreg.CloseKey`.
+
+5. **Return and Print the Computer Name:** If successful, the computer name is returned and printed. If an error occurs, it prints an error message.
+
+### Note:
+- This script must be run with administrative privileges to access certain registry keys on some systems.
+- The script is designed for Windows systems, as `winreg` is specific to Windows.
