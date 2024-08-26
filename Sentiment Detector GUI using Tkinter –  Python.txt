@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/sentiment-detector-gui-using-tkinter-python/?ref=ml_lbp

@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/gui-application-for-live-cricket-scoreboard-using-python/

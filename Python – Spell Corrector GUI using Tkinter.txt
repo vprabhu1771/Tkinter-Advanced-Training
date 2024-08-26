@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/python-spell-corrector-gui-using-tkinter/?ref=ml_lbp

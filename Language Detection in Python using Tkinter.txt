@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/language-detection-in-python-using-tkinter/?ref=previous_article

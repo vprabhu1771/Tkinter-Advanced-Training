@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/how-to-use-unicode-and-special-characters-in-tkinter/?ref=ml_lbp

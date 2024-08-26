@@ -1,0 +1,1 @@
+https://discuss.ardupilot.org/t/getting-gstreamer-feed-in-mission-planner/38243

@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/how-to-print-hard-copy-using-tkinter/?ref=ml_lbp

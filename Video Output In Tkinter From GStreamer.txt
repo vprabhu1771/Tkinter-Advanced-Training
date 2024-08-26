@@ -1,0 +1,1 @@
+https://stackoverflow.com/questions/4937955/video-output-in-tkinter-from-gstreamer
