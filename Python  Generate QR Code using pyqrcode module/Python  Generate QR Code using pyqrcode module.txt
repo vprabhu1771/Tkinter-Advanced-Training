@@ -1,0 +1,1 @@
+https://www.geeksforgeeks.org/python-generate-qr-code-using-pyqrcode-module/
