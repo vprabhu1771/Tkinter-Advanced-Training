@@ -1,6 +1,10 @@
+```
 import tkinter
 
 print(tkinter.TkVersion)
+```
 
-OUTPUT
+# OUTPUT
+```
 8.6
+```
