@@ -1,7 +1,0 @@
-To run this application, you'll need to have the requests, beautifulsoup4, and tkinter libraries installed. You can install them using pip install requests beautifulsoup4 tk.
-
-When you run the application, it will open a window where you can enter the Twitter profile URL and choose the directory where you want to save the downloaded media files. After clicking the "Download" button, it will fetch the HTML content of the profile, extract the media URLs, and download the files to the specified directory.
-
-Please note that this code relies on the specific HTML structure of the Twitter website, so any changes to the website's layout could break the scraping functionality. Additionally, be aware of any legal and ethical considerations when downloading media from Twitter profiles.
-
-pip install requests beautifulsoup4 tk
