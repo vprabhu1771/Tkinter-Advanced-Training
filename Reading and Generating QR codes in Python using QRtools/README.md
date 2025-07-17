@@ -1,0 +1,3 @@
+```
+https://www.geeksforgeeks.org/reading-generating-qr-codes-python-using-qrtools/
+```

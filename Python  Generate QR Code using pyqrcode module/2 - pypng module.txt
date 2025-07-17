@@ -1,5 +1,0 @@
-install an additional module pypng to save image in png format
-
-Installation
-
-pip install pypng

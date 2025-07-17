@@ -1,3 +1,24 @@
+# 1 - setup
+
+```
+python -m venv venv
+```
+
+```
+open venv\pyvenv.cfg
+```
+
+# 2 - pyvenv.cfg
+
+```
+home = C:\Users\windows_rig3\AppData\Local\Programs\Python\Python312
+include-system-site-packages = false
+version = 3.12.5
+```
+
+# 3 - pyvenv.cfg
+
+```
 home = C:\Users\windows_rig3\AppData\Local\Programs\Python\Python312
 implementation = CPython
 version_info = 3.12.5.final.0
@@ -6,3 +27,4 @@ include-system-site-packages = false
 base-prefix = C:\Users\windows_rig3\AppData\Local\Programs\Python\Python312
 base-exec-prefix = C:\Users\windows_rig3\AppData\Local\Programs\Python\Python312
 base-executable = C:\Users\windows_rig3\AppData\Local\Programs\Python\Python312\python.exe
+```
